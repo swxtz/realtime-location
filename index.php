@@ -158,7 +158,7 @@
         #containersmenu:hover {
           background:#C6A8EB;
         }
-@media screen and (max-width: 1110px) {
+    @media screen and (max-width: 1110px) {
             #sidebarMenu {
               height: 100%;
               position:fixed ;
@@ -180,7 +180,7 @@
           #containersmenu:hover {
             background:#C6A8EB;
           }
-}
+    }   
     </style>
     <div class="header"></div>
     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">

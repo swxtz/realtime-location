@@ -3,7 +3,7 @@
     "background_color": "#f69435",
     "display": "fullscreen",
     "scope": "/MAPA/",
-    "start_url": "/MAPA/",
+    "start_url": "/",
     "name": "pwa-pam",
     "short_name": "pwapam",
     "icons": [
