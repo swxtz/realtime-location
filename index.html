@@ -1,248 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="manifest" href="manifest.json">
-    <title>Mapa</title>
-</head>
-<body>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-
-    
-    </script>
-
-<style>
-        html,
-        body {
-            overflow-x: hidden;
-            height: 100%;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #fff;
-            padding: 0;
-            margin: 0;
-        }
-
-        .header {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 100%;
-            box-shadow: none;
-            background-color: #C459E3 ;
-            position: fixed;
-            height: 60px !important;
-            overflow: hidden;
-            z-index: 10;
-        }
-
-        .main {
-            margin: 0 auto;
-            display: block;
-            height: 100%;
-            margin-top: 60px;
-        }
-
-        .mainInner {
-            display: table;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-        }
-
-        .mainInner {
-            display: table-cell;
-            vertical-align: middle;
-            font-size: 3em;
-            font-weight: bold;
-            letter-spacing: 1.25px;
-            height:900px ;
-            width:900px;
-        }
-
-        #sidebarMenu {
-            height: 100%;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            width: 250px;
-            margin-top: 60px;
-            transform: translateX(-250px);
-            transition: transform 250ms ease-in-out;
-            background: linear-gradient(180deg, #6A59E3 0%, #9759E3 100%);
-        }
-
-        .sidebarMenuInner {
-            margin: 0;
-            padding: 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.10);
-        }
-
-        .sidebarMenuInner li {
-            list-style: none;
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding: 20px;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-        }
-
-        .sidebarMenuInner li span {
-            display: block;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.50);
-        }
-
-        .sidebarMenuInner li a {
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        input[type="checkbox"]:checked~#sidebarMenu {
-            transform: translateX(0);
-        }
-
-        input[type=checkbox] {
-            transition: all 0.3s;
-            box-sizing: border-box;
-            display: none;
-        }
-
-        .sidebarIconToggle {
-            transition: all 0.3s;
-            box-sizing: border-box;
-            cursor: pointer;
-            position: absolute;
-            z-index: 99;
-            height: 100%;
-            width: 100%;
-            top: 22px;
-            left: 15px;
-            height: 22px;
-            width: 22px;
-        }
-
-        .spinner {
-            transition: all 0.3s;
-            box-sizing: border-box;
-            position: relative;
-            height: 3px;
-            width: 100%;
-            background-color: white;
-            margin: 2px 0;
-        }
-        #map { 
-                        height: 600px; 
-                        width: 1500px; 
-                        display: fixed;
-                        z-index: 0;
-                      }
-        #find-me{
-          height:50px;
-          width: 100px;
-        }
-        #containersmenu:hover {
-          background:#C6A8EB;
-        }
-    @media screen and (max-width: 1110px) {
-            #sidebarMenu {
-              height: 100%;
-              position:fixed ;
-              z-index: 1;
-              left: 0;
-              width: 150px;
-              margin-top: 60px;
-              transform: translateX(-150px);
-              transition: transform 200ms ease-in-out;
-              background: linear-gradient(180deg, #6A59E3 0%, #9759E3 100%);
-          }
-          #map { 
-                  height: 500px; 
-                  width: 100%; 
-                  z-index: 0;
-                  display: fixed;
-                  
-                }
-          #containersmenu:hover {
-            background:#C6A8EB;
-          }
-    }   
-    </style>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Mapa | Gustavo Mendonça</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
     <div class="header"></div>
-    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
     <label for="openSidebarMenu" class="sidebarIconToggle">
-        <div class="spinner diagonal parte1"></div>
-        <div class="spinner horizontal"></div>
-        <div class="spinner diagonal parte2"></div>
+      <div class="spinner diagonal parte1"></div>
+      <div class="spinner horizontal"></div>
+      <div class="spinner diagonal parte2"></div>
     </label>
     <div id="sidebarMenu">
-        <ul class="sidebarMenuInner">
-            <li id="containersmenu"><a href="#">Home</a></li>
-            <li id="containersmenu"><a href="#">Redes Sociais</a></li>
-            <li id="containersmenu"><a href="#">Sobre</a></li>
-            <li id="containersmenu"><a href="#">Contato</a></li>
-        </ul>
+      <ul class="sidebarMenuInner">
+        <li id="containersmenu"><a href="#">Mapa</a></li>
+      </ul>
     </div>
-    <div id='center' class="main center">
-        <div class="mainInner">
-                      <div id="map"></div>
+    <div id="center" class="main center">
+      <div class="mainInner">
+        <div id="map"></div>
 
-                      <button id="find-me">Procurar sua localização</button><br />
-                      <p id="status"></p>
-                      <a id="map-link" target="_blank"></a>
-              <script>
-                  
-                    function geoFindMe() {
-                  const status = document.querySelector("#status");
-                  const mapLink = document.querySelector("#map-link");
+        <button id="find-me">Procurar sua localização</button><br />
+        <p id="status"></p>
+        <a id="map-link" target="_blank"></a>
+        <script>
+          function geoFindMe() {
+            const status = document.querySelector("#status");
+            const mapLink = document.querySelector("#map-link");
 
-                  mapLink.href = "";
-                  mapLink.textContent = "";
+            mapLink.href = "";
+            mapLink.textContent = "";
 
-                  function success(position) {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
+            function success(position) {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
 
-                    status.textContent = "";
-                    var map = L.map('map').setView([latitude,longitude], 15);
-                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        maxZoom: 19,
-                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                    }).addTo(map);
-                    var marker = L.marker([latitude,longitude]).addTo(map);
+              status.textContent = "";
+              let map = L.map("map").setView([latitude, longitude], 12);
+              let circle = L.circle([latitude, longitude], 3000).addTo(map);
+              L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution:
+                  '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+              }).addTo(map);
+              var marker = L.marker([latitude, longitude]).addTo(map);
+            }
 
-                  }
+            function error() {
+              status.textContent = "Não foi possível acessar sua localização";
+            }
 
-                  function error() {
-                    status.textContent = "Não foi possível acessar sua localização";
-                  }
+            if (!navigator.geolocation) {
+              status.textContent =
+                "Geolocalização não é suportada em seu navegador";
+            } else {
+              status.textContent = "Localizando...";
+              navigator.geolocation.getCurrentPosition(success, error);
+            }
+          }
 
-                  if (!navigator.geolocation) {
-                    status.textContent = "Geolocalização não é suportada em seu navegador";
-                  } else {
-                    status.textContent = "Localizando...";
-                    navigator.geolocation.getCurrentPosition(success, error);
-
-                  }
-                }
-
-                document.querySelector("#find-me").addEventListener("click", geoFindMe);
-              </script>
-        </div>
+          document
+            .querySelector("#find-me")
+            .addEventListener("click", geoFindMe);
+        </script>
+      </div>
     </div>
-</body>
+  </body>
 </html>

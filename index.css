@@ -1,0 +1,160 @@
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  background-color: #121214;
+  position: fixed;
+  height: 60px ;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.main {
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  margin-top: 60px;
+}
+
+.mainInner {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.mainInner {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+  height: 900px;
+  width: 900px;
+}
+
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  width: 250px;
+  margin-top: 60px;
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #6a59e3 0%, #9759e3 100%);
+}
+
+.sidebarMenuInner {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarMenuInner li {
+  list-style: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarMenuInner li span {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebarMenuInner li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type="checkbox"] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+}
+
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  margin: 2px 0;
+}
+#map {
+  height: 600px;
+  width: 1500px;
+  display: fixed;
+  z-index: 0;
+}
+#find-me {
+  height: 50px;
+  width: 100px;
+}
+#containersmenu:hover {
+  background: #c6a8eb;
+}
+@media screen and (max-width: 1110px) {
+  #sidebarMenu {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 150px;
+    margin-top: 60px;
+    transform: translateX(-150px);
+    transition: transform 200ms ease-in-out;
+    background: linear-gradient(180deg, #6a59e3 0%, #9759e3 100%);
+  }
+  #map {
+    height: 500px;
+    width: 100%;
+    z-index: 0;
+    display: fixed;
+  }
+  #containersmenu:hover {
+    background: #c6a8eb;
+  }
+}

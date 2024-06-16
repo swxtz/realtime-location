@@ -1,11 +1,11 @@
 {
-    "theme_color": "#f69435",
-    "background_color": "#f69435",
+    "theme_color": "#fafafa",
+    "background_color": "#121214",
     "display": "fullscreen",
     "scope": "/MAPA/",
-    "start_url": "/",
-    "name": "pwa-pam",
-    "short_name": "pwapam",
+    "start_url": "/MAPA/",
+    "name": "Mapa | Gustavo Mendonça",
+    "short_name": "Mapa",
     "icons": [
         {
             "src": "images/icon-192x192.png",
