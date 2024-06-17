@@ -3,7 +3,7 @@
     "background_color": "#121214",
     "display": "fullscreen",
     "scope": "/MAPA/",
-    "start_url": "/MAPA/",
+    "start_url": "/",
     "name": "Mapa | Gustavo Mendonça",
     "short_name": "Mapa",
     "icons": [
